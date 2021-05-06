@@ -454,6 +454,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Dtos\RequestDtos.cs" />
+    <Compile Include="Dtos\ResponseDtos.cs" />
+    <Compile Include="ErrorLog.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
