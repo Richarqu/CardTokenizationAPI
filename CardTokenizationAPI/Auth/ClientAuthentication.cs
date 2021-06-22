@@ -7,5 +7,6 @@ namespace CardTokenizationAPI.Auth
 {
     public class ClientAuthentication
     {
+
     }
 }

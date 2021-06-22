@@ -15,7 +15,6 @@ namespace MyAppTools.Infrastructure
         void Delete(T entity);
         void Edit(T entity);
         T Find(params object[] keyValues);
-
     }
 
     internal partial class Repository<T> : IRepository<T>,

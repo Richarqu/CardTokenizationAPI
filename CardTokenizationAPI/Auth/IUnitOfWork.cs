@@ -16,6 +16,7 @@ namespace MyAppTools.Infrastructure
         private MyAppToolsDBContext _Context = new MyAppToolsDBContext();
         internal MyAppToolsDBContext Context { get { return this._Context; } }
 
+
         public int SaveChanges()
         {
             return this._Context.SaveChanges();
