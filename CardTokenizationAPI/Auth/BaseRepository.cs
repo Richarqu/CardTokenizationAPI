@@ -12,6 +12,7 @@ namespace MyAppTools.Infrastructure
         public BaseRepository(IUnitOfWork unitOfWork)
             : base((unitOfWork as UnitOfWork).Context)
         {
+
         }
     }
 }
