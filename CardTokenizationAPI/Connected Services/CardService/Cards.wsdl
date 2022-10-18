@@ -1,0 +1,3226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetSelectPINAndUpdatePINOffset_GO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectedPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectPINAndUpdatePINOffset_GOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSelectPINAndUpdatePINOffset_GOResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetImalActiveCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImalActiveCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImalActiveCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnrolSafetoken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Input" type="tns:SafetokenDet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SafetokenDet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="accountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="cardPan" type="s:unsignedLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="expiryDate" type="s:unsignedShort" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="primaryMobileNumber" type="s:unsignedLong" />
+          <s:element minOccurs="0" maxOccurs="1" name="surname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnrolSafetokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnrolSafetokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateAndUpdateRandomPIN_GO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateAndUpdateRandomPIN_GOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateAndUpdateRandomPIN_GOResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCardListResult" type="tns:ArrayOfCardDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCardDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CardDetail" nillable="true" type="tns:CardDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CardDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PAN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardProvider" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cvv2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlockStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFarePayCardByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFarePayCardByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFarePayCardByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledChannelsForNonNuban">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledChannelsForNonNubanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnabledChannelsForNonNubanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllActiveCardList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllActiveCardListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllActiveCardListResult" type="tns:ArrayOfCardDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateAndUpdateRandomPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateAndUpdateRandomPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateAndUpdateRandomPINResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetATMDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetATMDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetATMDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectPINAndUpdatePINOffset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectedPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSelectPINAndUpdatePINOffsetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSelectPINAndUpdatePINOffsetResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateNewCardGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectedPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateNewCardGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivateNewCardGOResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateNewCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectedPin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateNewCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivateNewCardResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINOffSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINOffSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPINOffSetResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateCVV1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateCVV1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateCVV1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateCVV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateCVV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateCVV2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePINBlock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pvki" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneratePINBlockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeneratePINBlockResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINFromClearPINBlock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINFromClearPINBlockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPINFromClearPINBlockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINFromPINOffset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pvk" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pinLength" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINFromPINOffsetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPINFromPINOffsetResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINOffSetFromSelectedPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPINOffSetFromSelectedPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPINOffSetFromSelectedPINResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SFTPFileUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sftpHost" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sftpPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sftpUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sftpPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sftpPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uploadFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sftpName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SFTPFileUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SFTPFileUploadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCardPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCardPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCardPINResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LinkAccountsToCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_Type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currency_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LinkAccountsToCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LinkAccountsToCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCards">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCardsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidNewCards">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidNewCardsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidNewCardsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardsWithAcctsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardsWithAcctsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCardsWithAcctsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveIMALCardsWithAcctsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveIMALCardsWithAcctsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveIMALCardsWithAcctsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllActiveCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllActiveCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllActiveCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidNewCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidNewCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidNewCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidNewImalCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidNewImalCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidNewImalCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLimitCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLimitCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLimitCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONActiveCardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONActiveCardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONActiveCardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONActiveVISACardsByCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONActiveVISACardsByCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONActiveVISACardsByCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPOSTransByTerminal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="terminalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPOSTransByTerminalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPOSTransByTerminalResult" type="tns:ArrayOfNIBSSFeedDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNIBSSFeedDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NIBSSFeedDto" nillable="true" type="tns:NIBSSFeedDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NIBSSFeedDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TerminalID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TranAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranAmountSignal" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FeedTimeStamp" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransmissionTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageReq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClearingPeriod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StanNrReq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StanNrRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RRNReq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RRNRes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardAcceptorNameLoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Surcharge" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurchargeSignal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AcqInstitutionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PosDataCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardExpiry" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantCatCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TerminalType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrencyCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FwdInstitutionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantPhoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantAcctNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionFee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SettledAmount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPOSTransByAccountNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPOSTransByAccountNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPOSTransByAccountNoResult" type="tns:ArrayOfNIBSSFeedDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCardData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardProg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertCardDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertCardDataResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserWalletCardData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameOnCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="curCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardProg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserWalletCardDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InserWalletCardDataResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardLimits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardProgram" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardLimitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardLimitsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertVirtualCardData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="issuer_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardProg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="stat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertVirtualCardDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertVirtualCardDataResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatemVisaData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="refId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatemVisaDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreatemVisaDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BlockCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BlockCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BlockCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnBlockCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customer_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnBlockCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnBlockCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardStat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardStatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardStatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardWebLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="limit" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardWebLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyCardWebLimitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardPurchaseLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="limit" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardPurchaseLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyCardPurchaseLimitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardPaymentLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="limit" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyCardPaymentLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyCardPaymentLimitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQRCodeData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardprogram" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQRCodeDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQRCodeDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMPassData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMPassDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMPassDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullCountryList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFullCountryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFullCountryListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryByCurrCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="curCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryByCurrCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryByCurrCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryByISO2Code">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isoCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryByISO2CodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryByISO2CodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnabledCountriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledChannels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnabledChannelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnabledChannelsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableChannelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelForNonNubanCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="customeruniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelForNonNubanCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableChannelForNonNubanCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelForEnrolledNonNubanCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableChannelForEnrolledNonNubanCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableChannelForEnrolledNonNubanCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnboardCustomerCardControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="account_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnboardCustomerCardControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OnboardCustomerCardControlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCardPIN_GO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCardPIN_GOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCardPIN_GOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnboardCustomerCardControlWallet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customeruiqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnboardCustomerCardControlWalletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OnboardCustomerCardControlWalletResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="country" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableChannelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannelForNonNubanCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="customeruiqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannelForNonNubanCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableChannelForNonNubanCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannelForEnrolledNonNubanCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="channel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableChannelForEnrolledNonNubanCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableChannelForEnrolledNonNubanCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONCardTrxnPerTermCurrMonth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONCardTrxnPerTermCurrMonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONCardTrxnPerTermCurrMonthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardOutputInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_program" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardOutputInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardOutputInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOuputFileTrailer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="headerCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="recordsCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cardCarriers" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pinMailers" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOuputFileTrailerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenOuputFileTrailerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOuputFileHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="issuer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="issuerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardProdId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardProgramId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardAddy1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardAddy2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardMsg1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardMsg2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardMsg3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardMsg4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinAddy1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinAddy2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinPostal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOuputFileHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenOuputFileHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateOutputFileRecords">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="servicecode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pan" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="seq_nr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nameOnCard" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="midname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cusnum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="disc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardAddy1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardAddy2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinAddy1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinAddy2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pinPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin_Export_key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pinLength" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pvki" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateOutputFileRecordsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateOutputFileRecordsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSelectPINAndUpdatePINOffset_GOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSelectPINAndUpdatePINOffset_GO" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectPINAndUpdatePINOffset_GOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSelectPINAndUpdatePINOffset_GOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImalActiveCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImalActiveCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetImalActiveCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImalActiveCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnrolSafetokenSoapIn">
+    <wsdl:part name="parameters" element="tns:EnrolSafetoken" />
+  </wsdl:message>
+  <wsdl:message name="EnrolSafetokenSoapOut">
+    <wsdl:part name="parameters" element="tns:EnrolSafetokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateAndUpdateRandomPIN_GOSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateAndUpdateRandomPIN_GO" />
+  </wsdl:message>
+  <wsdl:message name="GenerateAndUpdateRandomPIN_GOSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateAndUpdateRandomPIN_GOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCardList" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCardListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFarePayCardByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFarePayCardByID" />
+  </wsdl:message>
+  <wsdl:message name="GetFarePayCardByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFarePayCardByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledChannelsForNonNubanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnabledChannelsForNonNuban" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledChannelsForNonNubanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnabledChannelsForNonNubanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllActiveCardListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllActiveCardList" />
+  </wsdl:message>
+  <wsdl:message name="GetAllActiveCardListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllActiveCardListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateAndUpdateRandomPINSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateAndUpdateRandomPIN" />
+  </wsdl:message>
+  <wsdl:message name="GenerateAndUpdateRandomPINSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateAndUpdateRandomPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetATMDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetATMDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetATMDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetATMDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectPINAndUpdatePINOffsetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSelectPINAndUpdatePINOffset" />
+  </wsdl:message>
+  <wsdl:message name="GetSelectPINAndUpdatePINOffsetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSelectPINAndUpdatePINOffsetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateNewCardGOSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateNewCardGO" />
+  </wsdl:message>
+  <wsdl:message name="ActivateNewCardGOSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateNewCardGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivateNewCardSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateNewCard" />
+  </wsdl:message>
+  <wsdl:message name="ActivateNewCardSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateNewCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPINOffSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPINOffSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPINOffSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPINOffSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateCVV1SoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateCVV1" />
+  </wsdl:message>
+  <wsdl:message name="GenerateCVV1SoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateCVV1Response" />
+  </wsdl:message>
+  <wsdl:message name="GenerateCVV2SoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateCVV2" />
+  </wsdl:message>
+  <wsdl:message name="GenerateCVV2SoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateCVV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePINBlockSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneratePINBlock" />
+  </wsdl:message>
+  <wsdl:message name="GeneratePINBlockSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneratePINBlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPINFromClearPINBlockSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPINFromClearPINBlock" />
+  </wsdl:message>
+  <wsdl:message name="GetPINFromClearPINBlockSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPINFromClearPINBlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPINFromPINOffsetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPINFromPINOffset" />
+  </wsdl:message>
+  <wsdl:message name="GetPINFromPINOffsetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPINFromPINOffsetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPINOffSetFromSelectedPINSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPINOffSetFromSelectedPIN" />
+  </wsdl:message>
+  <wsdl:message name="GetPINOffSetFromSelectedPINSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPINOffSetFromSelectedPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="SFTPFileUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:SFTPFileUpload" />
+  </wsdl:message>
+  <wsdl:message name="SFTPFileUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:SFTPFileUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCardPINSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCardPIN" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCardPINSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCardPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="LinkAccountsToCardSoapIn">
+    <wsdl:part name="parameters" element="tns:LinkAccountsToCard" />
+  </wsdl:message>
+  <wsdl:message name="LinkAccountsToCardSoapOut">
+    <wsdl:part name="parameters" element="tns:LinkAccountsToCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCards" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidNewCardsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidNewCards" />
+  </wsdl:message>
+  <wsdl:message name="GetValidNewCardsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidNewCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardsWithAcctsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCardsWithAcctsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardsWithAcctsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCardsWithAcctsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveIMALCardsWithAcctsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveIMALCardsWithAcctsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveIMALCardsWithAcctsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveIMALCardsWithAcctsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllActiveCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllActiveCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetAllActiveCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllActiveCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidNewCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidNewCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetValidNewCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidNewCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidNewImalCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidNewImalCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetValidNewImalCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidNewImalCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLimitCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLimitCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetLimitCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLimitCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONActiveCardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONActiveCardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONActiveCardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONActiveCardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONActiveVISACardsByCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONActiveVISACardsByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONActiveVISACardsByCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONActiveVISACardsByCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPOSTransByTerminalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPOSTransByTerminal" />
+  </wsdl:message>
+  <wsdl:message name="GetPOSTransByTerminalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPOSTransByTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPOSTransByAccountNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPOSTransByAccountNo" />
+  </wsdl:message>
+  <wsdl:message name="GetPOSTransByAccountNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPOSTransByAccountNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertCardDataSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertCardData" />
+  </wsdl:message>
+  <wsdl:message name="InsertCardDataSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertCardDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserWalletCardDataSoapIn">
+    <wsdl:part name="parameters" element="tns:InserWalletCardData" />
+  </wsdl:message>
+  <wsdl:message name="InserWalletCardDataSoapOut">
+    <wsdl:part name="parameters" element="tns:InserWalletCardDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLimitsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardLimits" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLimitsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardLimitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertVirtualCardDataSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertVirtualCardData" />
+  </wsdl:message>
+  <wsdl:message name="InsertVirtualCardDataSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertVirtualCardDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatemVisaDataSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatemVisaData" />
+  </wsdl:message>
+  <wsdl:message name="CreatemVisaDataSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatemVisaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="BlockCardSoapIn">
+    <wsdl:part name="parameters" element="tns:BlockCard" />
+  </wsdl:message>
+  <wsdl:message name="BlockCardSoapOut">
+    <wsdl:part name="parameters" element="tns:BlockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnBlockCardSoapIn">
+    <wsdl:part name="parameters" element="tns:UnBlockCard" />
+  </wsdl:message>
+  <wsdl:message name="UnBlockCardSoapOut">
+    <wsdl:part name="parameters" element="tns:UnBlockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardStatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardStat" />
+  </wsdl:message>
+  <wsdl:message name="GetCardStatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardWebLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyCardWebLimit" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardWebLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyCardWebLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardPurchaseLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyCardPurchaseLimit" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardPurchaseLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyCardPurchaseLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardPaymentLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyCardPaymentLimit" />
+  </wsdl:message>
+  <wsdl:message name="ModifyCardPaymentLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyCardPaymentLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQRCodeDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQRCodeData" />
+  </wsdl:message>
+  <wsdl:message name="GetQRCodeDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQRCodeDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMPassDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMPassData" />
+  </wsdl:message>
+  <wsdl:message name="GetMPassDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMPassDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullCountryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullCountryList" />
+  </wsdl:message>
+  <wsdl:message name="GetFullCountryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullCountryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryByCurrCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryByCurrCode" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryByCurrCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryByCurrCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryByISO2CodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryByISO2Code" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryByISO2CodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryByISO2CodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnabledCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnabledCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledChannelsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnabledChannels" />
+  </wsdl:message>
+  <wsdl:message name="GetEnabledChannelsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnabledChannelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableChannel" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelForNonNubanCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableChannelForNonNubanCustomer" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelForNonNubanCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableChannelForNonNubanCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelForEnrolledNonNubanCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableChannelForEnrolledNonNubanCustomer" />
+  </wsdl:message>
+  <wsdl:message name="EnableChannelForEnrolledNonNubanCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableChannelForEnrolledNonNubanCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="OnboardCustomerCardControlSoapIn">
+    <wsdl:part name="parameters" element="tns:OnboardCustomerCardControl" />
+  </wsdl:message>
+  <wsdl:message name="OnboardCustomerCardControlSoapOut">
+    <wsdl:part name="parameters" element="tns:OnboardCustomerCardControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCardPIN_GOSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCardPIN_GO" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCardPIN_GOSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCardPIN_GOResponse" />
+  </wsdl:message>
+  <wsdl:message name="OnboardCustomerCardControlWalletSoapIn">
+    <wsdl:part name="parameters" element="tns:OnboardCustomerCardControlWallet" />
+  </wsdl:message>
+  <wsdl:message name="OnboardCustomerCardControlWalletSoapOut">
+    <wsdl:part name="parameters" element="tns:OnboardCustomerCardControlWalletResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:EnableCountry" />
+  </wsdl:message>
+  <wsdl:message name="EnableCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:EnableCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:DisableCountry" />
+  </wsdl:message>
+  <wsdl:message name="DisableCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:DisableCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableChannel" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelForNonNubanCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableChannelForNonNubanCustomer" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelForNonNubanCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableChannelForNonNubanCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelForEnrolledNonNubanCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableChannelForEnrolledNonNubanCustomer" />
+  </wsdl:message>
+  <wsdl:message name="DisableChannelForEnrolledNonNubanCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableChannelForEnrolledNonNubanCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONCardTrxnPerTermCurrMonthSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONCardTrxnPerTermCurrMonth" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONCardTrxnPerTermCurrMonthSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONCardTrxnPerTermCurrMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardOutputInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardOutputInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCardOutputInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardOutputInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenOuputFileTrailerSoapIn">
+    <wsdl:part name="parameters" element="tns:GenOuputFileTrailer" />
+  </wsdl:message>
+  <wsdl:message name="GenOuputFileTrailerSoapOut">
+    <wsdl:part name="parameters" element="tns:GenOuputFileTrailerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenOuputFileHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:GenOuputFileHeader" />
+  </wsdl:message>
+  <wsdl:message name="GenOuputFileHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:GenOuputFileHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateOutputFileRecordsSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateOutputFileRecords" />
+  </wsdl:message>
+  <wsdl:message name="GenerateOutputFileRecordsSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateOutputFileRecordsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CardsSoap">
+    <wsdl:operation name="GetSelectPINAndUpdatePINOffset_GO">
+      <wsdl:input message="tns:GetSelectPINAndUpdatePINOffset_GOSoapIn" />
+      <wsdl:output message="tns:GetSelectPINAndUpdatePINOffset_GOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImalActiveCardsByCustomer">
+      <wsdl:input message="tns:GetImalActiveCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetImalActiveCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnrolSafetoken">
+      <wsdl:input message="tns:EnrolSafetokenSoapIn" />
+      <wsdl:output message="tns:EnrolSafetokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndUpdateRandomPIN_GO">
+      <wsdl:input message="tns:GenerateAndUpdateRandomPIN_GOSoapIn" />
+      <wsdl:output message="tns:GenerateAndUpdateRandomPIN_GOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardList">
+      <wsdl:input message="tns:GetActiveCardListSoapIn" />
+      <wsdl:output message="tns:GetActiveCardListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFarePayCardByID">
+      <wsdl:input message="tns:GetFarePayCardByIDSoapIn" />
+      <wsdl:output message="tns:GetFarePayCardByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannelsForNonNuban">
+      <wsdl:input message="tns:GetEnabledChannelsForNonNubanSoapIn" />
+      <wsdl:output message="tns:GetEnabledChannelsForNonNubanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveCardList">
+      <wsdl:input message="tns:GetAllActiveCardListSoapIn" />
+      <wsdl:output message="tns:GetAllActiveCardListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndUpdateRandomPIN">
+      <wsdl:input message="tns:GenerateAndUpdateRandomPINSoapIn" />
+      <wsdl:output message="tns:GenerateAndUpdateRandomPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetATMDetails">
+      <wsdl:input message="tns:GetATMDetailsSoapIn" />
+      <wsdl:output message="tns:GetATMDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectPINAndUpdatePINOffset">
+      <wsdl:input message="tns:GetSelectPINAndUpdatePINOffsetSoapIn" />
+      <wsdl:output message="tns:GetSelectPINAndUpdatePINOffsetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateNewCardGO">
+      <wsdl:input message="tns:ActivateNewCardGOSoapIn" />
+      <wsdl:output message="tns:ActivateNewCardGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateNewCard">
+      <wsdl:input message="tns:ActivateNewCardSoapIn" />
+      <wsdl:output message="tns:ActivateNewCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPINOffSet">
+      <wsdl:input message="tns:GetPINOffSetSoapIn" />
+      <wsdl:output message="tns:GetPINOffSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCVV1">
+      <wsdl:input message="tns:GenerateCVV1SoapIn" />
+      <wsdl:output message="tns:GenerateCVV1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCVV2">
+      <wsdl:input message="tns:GenerateCVV2SoapIn" />
+      <wsdl:output message="tns:GenerateCVV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePINBlock">
+      <wsdl:input message="tns:GeneratePINBlockSoapIn" />
+      <wsdl:output message="tns:GeneratePINBlockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPINFromClearPINBlock">
+      <wsdl:input message="tns:GetPINFromClearPINBlockSoapIn" />
+      <wsdl:output message="tns:GetPINFromClearPINBlockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPINFromPINOffset">
+      <wsdl:input message="tns:GetPINFromPINOffsetSoapIn" />
+      <wsdl:output message="tns:GetPINFromPINOffsetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPINOffSetFromSelectedPIN">
+      <wsdl:input message="tns:GetPINOffSetFromSelectedPINSoapIn" />
+      <wsdl:output message="tns:GetPINOffSetFromSelectedPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SFTPFileUpload">
+      <wsdl:input message="tns:SFTPFileUploadSoapIn" />
+      <wsdl:output message="tns:SFTPFileUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardPIN">
+      <wsdl:input message="tns:ValidateCardPINSoapIn" />
+      <wsdl:output message="tns:ValidateCardPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LinkAccountsToCard">
+      <wsdl:input message="tns:LinkAccountsToCardSoapIn" />
+      <wsdl:output message="tns:LinkAccountsToCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCards">
+      <wsdl:input message="tns:GetActiveCardsSoapIn" />
+      <wsdl:output message="tns:GetActiveCardsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewCards">
+      <wsdl:input message="tns:GetValidNewCardsSoapIn" />
+      <wsdl:output message="tns:GetValidNewCardsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardsByCustomer">
+      <wsdl:input message="tns:GetActiveCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetActiveCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardsWithAcctsByCustomer">
+      <wsdl:input message="tns:GetActiveCardsWithAcctsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetActiveCardsWithAcctsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveIMALCardsWithAcctsByCustomer">
+      <wsdl:input message="tns:GetActiveIMALCardsWithAcctsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetActiveIMALCardsWithAcctsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveCardsByCustomer">
+      <wsdl:input message="tns:GetAllActiveCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetAllActiveCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewCardsByCustomer">
+      <wsdl:input message="tns:GetValidNewCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetValidNewCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewImalCardsByCustomer">
+      <wsdl:input message="tns:GetValidNewImalCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetValidNewImalCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLimitCardsByCustomer">
+      <wsdl:input message="tns:GetLimitCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetLimitCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONActiveCardsByCustomer">
+      <wsdl:input message="tns:GetJSONActiveCardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetJSONActiveCardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONActiveVISACardsByCustomer">
+      <wsdl:input message="tns:GetJSONActiveVISACardsByCustomerSoapIn" />
+      <wsdl:output message="tns:GetJSONActiveVISACardsByCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSTransByTerminal">
+      <wsdl:input message="tns:GetPOSTransByTerminalSoapIn" />
+      <wsdl:output message="tns:GetPOSTransByTerminalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSTransByAccountNo">
+      <wsdl:input message="tns:GetPOSTransByAccountNoSoapIn" />
+      <wsdl:output message="tns:GetPOSTransByAccountNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardData">
+      <wsdl:input message="tns:InsertCardDataSoapIn" />
+      <wsdl:output message="tns:InsertCardDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserWalletCardData">
+      <wsdl:input message="tns:InserWalletCardDataSoapIn" />
+      <wsdl:output message="tns:InserWalletCardDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLimits">
+      <wsdl:input message="tns:GetCardLimitsSoapIn" />
+      <wsdl:output message="tns:GetCardLimitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVirtualCardData">
+      <wsdl:input message="tns:InsertVirtualCardDataSoapIn" />
+      <wsdl:output message="tns:InsertVirtualCardDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatemVisaData">
+      <wsdl:input message="tns:CreatemVisaDataSoapIn" />
+      <wsdl:output message="tns:CreatemVisaDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <wsdl:input message="tns:BlockCardSoapIn" />
+      <wsdl:output message="tns:BlockCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockCard">
+      <wsdl:input message="tns:UnBlockCardSoapIn" />
+      <wsdl:output message="tns:UnBlockCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStat">
+      <wsdl:input message="tns:GetCardStatSoapIn" />
+      <wsdl:output message="tns:GetCardStatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardWebLimit">
+      <wsdl:input message="tns:ModifyCardWebLimitSoapIn" />
+      <wsdl:output message="tns:ModifyCardWebLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardPurchaseLimit">
+      <wsdl:input message="tns:ModifyCardPurchaseLimitSoapIn" />
+      <wsdl:output message="tns:ModifyCardPurchaseLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardPaymentLimit">
+      <wsdl:input message="tns:ModifyCardPaymentLimitSoapIn" />
+      <wsdl:output message="tns:ModifyCardPaymentLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQRCodeData">
+      <wsdl:input message="tns:GetQRCodeDataSoapIn" />
+      <wsdl:output message="tns:GetQRCodeDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMPassData">
+      <wsdl:input message="tns:GetMPassDataSoapIn" />
+      <wsdl:output message="tns:GetMPassDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullCountryList">
+      <wsdl:input message="tns:GetFullCountryListSoapIn" />
+      <wsdl:output message="tns:GetFullCountryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByCurrCode">
+      <wsdl:input message="tns:GetCountryByCurrCodeSoapIn" />
+      <wsdl:output message="tns:GetCountryByCurrCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByISO2Code">
+      <wsdl:input message="tns:GetCountryByISO2CodeSoapIn" />
+      <wsdl:output message="tns:GetCountryByISO2CodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledCountries">
+      <wsdl:input message="tns:GetEnabledCountriesSoapIn" />
+      <wsdl:output message="tns:GetEnabledCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannels">
+      <wsdl:input message="tns:GetEnabledChannelsSoapIn" />
+      <wsdl:output message="tns:GetEnabledChannelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannel">
+      <wsdl:input message="tns:EnableChannelSoapIn" />
+      <wsdl:output message="tns:EnableChannelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelForNonNubanCustomer">
+      <wsdl:input message="tns:EnableChannelForNonNubanCustomerSoapIn" />
+      <wsdl:output message="tns:EnableChannelForNonNubanCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelForEnrolledNonNubanCustomer">
+      <wsdl:input message="tns:EnableChannelForEnrolledNonNubanCustomerSoapIn" />
+      <wsdl:output message="tns:EnableChannelForEnrolledNonNubanCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OnboardCustomerCardControl">
+      <wsdl:input message="tns:OnboardCustomerCardControlSoapIn" />
+      <wsdl:output message="tns:OnboardCustomerCardControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardPIN_GO">
+      <wsdl:input message="tns:ValidateCardPIN_GOSoapIn" />
+      <wsdl:output message="tns:ValidateCardPIN_GOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OnboardCustomerCardControlWallet">
+      <wsdl:input message="tns:OnboardCustomerCardControlWalletSoapIn" />
+      <wsdl:output message="tns:OnboardCustomerCardControlWalletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountry">
+      <wsdl:input message="tns:EnableCountrySoapIn" />
+      <wsdl:output message="tns:EnableCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableCountry">
+      <wsdl:input message="tns:DisableCountrySoapIn" />
+      <wsdl:output message="tns:DisableCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannel">
+      <wsdl:input message="tns:DisableChannelSoapIn" />
+      <wsdl:output message="tns:DisableChannelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannelForNonNubanCustomer">
+      <wsdl:input message="tns:DisableChannelForNonNubanCustomerSoapIn" />
+      <wsdl:output message="tns:DisableChannelForNonNubanCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannelForEnrolledNonNubanCustomer">
+      <wsdl:input message="tns:DisableChannelForEnrolledNonNubanCustomerSoapIn" />
+      <wsdl:output message="tns:DisableChannelForEnrolledNonNubanCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONCardTrxnPerTermCurrMonth">
+      <wsdl:input message="tns:GetJSONCardTrxnPerTermCurrMonthSoapIn" />
+      <wsdl:output message="tns:GetJSONCardTrxnPerTermCurrMonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardOutputInfo">
+      <wsdl:input message="tns:GetCardOutputInfoSoapIn" />
+      <wsdl:output message="tns:GetCardOutputInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenOuputFileTrailer">
+      <wsdl:input message="tns:GenOuputFileTrailerSoapIn" />
+      <wsdl:output message="tns:GenOuputFileTrailerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenOuputFileHeader">
+      <wsdl:input message="tns:GenOuputFileHeaderSoapIn" />
+      <wsdl:output message="tns:GenOuputFileHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOutputFileRecords">
+      <wsdl:input message="tns:GenerateOutputFileRecordsSoapIn" />
+      <wsdl:output message="tns:GenerateOutputFileRecordsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CardsSoap" type="tns:CardsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSelectPINAndUpdatePINOffset_GO">
+      <soap:operation soapAction="http://tempuri.org/GetSelectPINAndUpdatePINOffset_GO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImalActiveCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetImalActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrolSafetoken">
+      <soap:operation soapAction="http://tempuri.org/EnrolSafetoken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndUpdateRandomPIN_GO">
+      <soap:operation soapAction="http://tempuri.org/GenerateAndUpdateRandomPIN_GO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardList">
+      <soap:operation soapAction="http://tempuri.org/GetActiveCardList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFarePayCardByID">
+      <soap:operation soapAction="http://tempuri.org/GetFarePayCardByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannelsForNonNuban">
+      <soap:operation soapAction="http://tempuri.org/GetEnabledChannelsForNonNuban" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveCardList">
+      <soap:operation soapAction="http://tempuri.org/GetAllActiveCardList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndUpdateRandomPIN">
+      <soap:operation soapAction="http://tempuri.org/GenerateAndUpdateRandomPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetATMDetails">
+      <soap:operation soapAction="http://tempuri.org/GetATMDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectPINAndUpdatePINOffset">
+      <soap:operation soapAction="http://tempuri.org/GetSelectPINAndUpdatePINOffset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateNewCardGO">
+      <soap:operation soapAction="http://tempuri.org/ActivateNewCardGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateNewCard">
+      <soap:operation soapAction="http://tempuri.org/ActivateNewCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINOffSet">
+      <soap:operation soapAction="http://tempuri.org/GetPINOffSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCVV1">
+      <soap:operation soapAction="http://tempuri.org/GenerateCVV1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCVV2">
+      <soap:operation soapAction="http://tempuri.org/GenerateCVV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePINBlock">
+      <soap:operation soapAction="http://tempuri.org/GeneratePINBlock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINFromClearPINBlock">
+      <soap:operation soapAction="http://tempuri.org/GetPINFromClearPINBlock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINFromPINOffset">
+      <soap:operation soapAction="http://tempuri.org/GetPINFromPINOffset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINOffSetFromSelectedPIN">
+      <soap:operation soapAction="http://tempuri.org/GetPINOffSetFromSelectedPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SFTPFileUpload">
+      <soap:operation soapAction="http://tempuri.org/SFTPFileUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardPIN">
+      <soap:operation soapAction="http://tempuri.org/ValidateCardPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkAccountsToCard">
+      <soap:operation soapAction="http://tempuri.org/LinkAccountsToCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCards">
+      <soap:operation soapAction="http://tempuri.org/GetActiveCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewCards">
+      <soap:operation soapAction="http://tempuri.org/GetValidNewCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardsWithAcctsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetActiveCardsWithAcctsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveIMALCardsWithAcctsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetActiveIMALCardsWithAcctsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetAllActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetValidNewCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewImalCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetValidNewImalCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLimitCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetLimitCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONActiveCardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetJSONActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONActiveVISACardsByCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetJSONActiveVISACardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSTransByTerminal">
+      <soap:operation soapAction="http://tempuri.org/GetPOSTransByTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSTransByAccountNo">
+      <soap:operation soapAction="http://tempuri.org/GetPOSTransByAccountNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardData">
+      <soap:operation soapAction="http://tempuri.org/InsertCardData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserWalletCardData">
+      <soap:operation soapAction="http://tempuri.org/InserWalletCardData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLimits">
+      <soap:operation soapAction="http://tempuri.org/GetCardLimits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVirtualCardData">
+      <soap:operation soapAction="http://tempuri.org/InsertVirtualCardData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatemVisaData">
+      <soap:operation soapAction="http://tempuri.org/CreatemVisaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <soap:operation soapAction="http://tempuri.org/BlockCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockCard">
+      <soap:operation soapAction="http://tempuri.org/UnBlockCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStat">
+      <soap:operation soapAction="http://tempuri.org/GetCardStat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardWebLimit">
+      <soap:operation soapAction="http://tempuri.org/ModifyCardWebLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardPurchaseLimit">
+      <soap:operation soapAction="http://tempuri.org/ModifyCardPurchaseLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardPaymentLimit">
+      <soap:operation soapAction="http://tempuri.org/ModifyCardPaymentLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQRCodeData">
+      <soap:operation soapAction="http://tempuri.org/GetQRCodeData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMPassData">
+      <soap:operation soapAction="http://tempuri.org/GetMPassData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullCountryList">
+      <soap:operation soapAction="http://tempuri.org/GetFullCountryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByCurrCode">
+      <soap:operation soapAction="http://tempuri.org/GetCountryByCurrCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByISO2Code">
+      <soap:operation soapAction="http://tempuri.org/GetCountryByISO2Code" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledCountries">
+      <soap:operation soapAction="http://tempuri.org/GetEnabledCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannels">
+      <soap:operation soapAction="http://tempuri.org/GetEnabledChannels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannel">
+      <soap:operation soapAction="http://tempuri.org/EnableChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelForNonNubanCustomer">
+      <soap:operation soapAction="http://tempuri.org/EnableChannelForNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelForEnrolledNonNubanCustomer">
+      <soap:operation soapAction="http://tempuri.org/EnableChannelForEnrolledNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnboardCustomerCardControl">
+      <soap:operation soapAction="http://tempuri.org/OnboardCustomerCardControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardPIN_GO">
+      <soap:operation soapAction="http://tempuri.org/ValidateCardPIN_GO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnboardCustomerCardControlWallet">
+      <soap:operation soapAction="http://tempuri.org/OnboardCustomerCardControlWallet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountry">
+      <soap:operation soapAction="http://tempuri.org/EnableCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableCountry">
+      <soap:operation soapAction="http://tempuri.org/DisableCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannel">
+      <soap:operation soapAction="http://tempuri.org/DisableChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannelForNonNubanCustomer">
+      <soap:operation soapAction="http://tempuri.org/DisableChannelForNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannelForEnrolledNonNubanCustomer">
+      <soap:operation soapAction="http://tempuri.org/DisableChannelForEnrolledNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONCardTrxnPerTermCurrMonth">
+      <soap:operation soapAction="http://tempuri.org/GetJSONCardTrxnPerTermCurrMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardOutputInfo">
+      <soap:operation soapAction="http://tempuri.org/GetCardOutputInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOuputFileTrailer">
+      <soap:operation soapAction="http://tempuri.org/GenOuputFileTrailer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOuputFileHeader">
+      <soap:operation soapAction="http://tempuri.org/GenOuputFileHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOutputFileRecords">
+      <soap:operation soapAction="http://tempuri.org/GenerateOutputFileRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CardsSoap12" type="tns:CardsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSelectPINAndUpdatePINOffset_GO">
+      <soap12:operation soapAction="http://tempuri.org/GetSelectPINAndUpdatePINOffset_GO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImalActiveCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetImalActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnrolSafetoken">
+      <soap12:operation soapAction="http://tempuri.org/EnrolSafetoken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndUpdateRandomPIN_GO">
+      <soap12:operation soapAction="http://tempuri.org/GenerateAndUpdateRandomPIN_GO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardList">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveCardList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFarePayCardByID">
+      <soap12:operation soapAction="http://tempuri.org/GetFarePayCardByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannelsForNonNuban">
+      <soap12:operation soapAction="http://tempuri.org/GetEnabledChannelsForNonNuban" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveCardList">
+      <soap12:operation soapAction="http://tempuri.org/GetAllActiveCardList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateAndUpdateRandomPIN">
+      <soap12:operation soapAction="http://tempuri.org/GenerateAndUpdateRandomPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetATMDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetATMDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelectPINAndUpdatePINOffset">
+      <soap12:operation soapAction="http://tempuri.org/GetSelectPINAndUpdatePINOffset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateNewCardGO">
+      <soap12:operation soapAction="http://tempuri.org/ActivateNewCardGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateNewCard">
+      <soap12:operation soapAction="http://tempuri.org/ActivateNewCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINOffSet">
+      <soap12:operation soapAction="http://tempuri.org/GetPINOffSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCVV1">
+      <soap12:operation soapAction="http://tempuri.org/GenerateCVV1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCVV2">
+      <soap12:operation soapAction="http://tempuri.org/GenerateCVV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePINBlock">
+      <soap12:operation soapAction="http://tempuri.org/GeneratePINBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINFromClearPINBlock">
+      <soap12:operation soapAction="http://tempuri.org/GetPINFromClearPINBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINFromPINOffset">
+      <soap12:operation soapAction="http://tempuri.org/GetPINFromPINOffset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPINOffSetFromSelectedPIN">
+      <soap12:operation soapAction="http://tempuri.org/GetPINOffSetFromSelectedPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SFTPFileUpload">
+      <soap12:operation soapAction="http://tempuri.org/SFTPFileUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardPIN">
+      <soap12:operation soapAction="http://tempuri.org/ValidateCardPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LinkAccountsToCard">
+      <soap12:operation soapAction="http://tempuri.org/LinkAccountsToCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCards">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewCards">
+      <soap12:operation soapAction="http://tempuri.org/GetValidNewCards" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCardsWithAcctsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveCardsWithAcctsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveIMALCardsWithAcctsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveIMALCardsWithAcctsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllActiveCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetAllActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetValidNewCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidNewImalCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetValidNewImalCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLimitCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetLimitCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONActiveCardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONActiveCardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONActiveVISACardsByCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONActiveVISACardsByCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSTransByTerminal">
+      <soap12:operation soapAction="http://tempuri.org/GetPOSTransByTerminal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOSTransByAccountNo">
+      <soap12:operation soapAction="http://tempuri.org/GetPOSTransByAccountNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardData">
+      <soap12:operation soapAction="http://tempuri.org/InsertCardData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserWalletCardData">
+      <soap12:operation soapAction="http://tempuri.org/InserWalletCardData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLimits">
+      <soap12:operation soapAction="http://tempuri.org/GetCardLimits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVirtualCardData">
+      <soap12:operation soapAction="http://tempuri.org/InsertVirtualCardData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatemVisaData">
+      <soap12:operation soapAction="http://tempuri.org/CreatemVisaData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <soap12:operation soapAction="http://tempuri.org/BlockCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockCard">
+      <soap12:operation soapAction="http://tempuri.org/UnBlockCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardStat">
+      <soap12:operation soapAction="http://tempuri.org/GetCardStat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardWebLimit">
+      <soap12:operation soapAction="http://tempuri.org/ModifyCardWebLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardPurchaseLimit">
+      <soap12:operation soapAction="http://tempuri.org/ModifyCardPurchaseLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCardPaymentLimit">
+      <soap12:operation soapAction="http://tempuri.org/ModifyCardPaymentLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQRCodeData">
+      <soap12:operation soapAction="http://tempuri.org/GetQRCodeData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMPassData">
+      <soap12:operation soapAction="http://tempuri.org/GetMPassData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullCountryList">
+      <soap12:operation soapAction="http://tempuri.org/GetFullCountryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByCurrCode">
+      <soap12:operation soapAction="http://tempuri.org/GetCountryByCurrCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByISO2Code">
+      <soap12:operation soapAction="http://tempuri.org/GetCountryByISO2Code" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledCountries">
+      <soap12:operation soapAction="http://tempuri.org/GetEnabledCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnabledChannels">
+      <soap12:operation soapAction="http://tempuri.org/GetEnabledChannels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannel">
+      <soap12:operation soapAction="http://tempuri.org/EnableChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelForNonNubanCustomer">
+      <soap12:operation soapAction="http://tempuri.org/EnableChannelForNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableChannelForEnrolledNonNubanCustomer">
+      <soap12:operation soapAction="http://tempuri.org/EnableChannelForEnrolledNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnboardCustomerCardControl">
+      <soap12:operation soapAction="http://tempuri.org/OnboardCustomerCardControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardPIN_GO">
+      <soap12:operation soapAction="http://tempuri.org/ValidateCardPIN_GO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnboardCustomerCardControlWallet">
+      <soap12:operation soapAction="http://tempuri.org/OnboardCustomerCardControlWallet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableCountry">
+      <soap12:operation soapAction="http://tempuri.org/EnableCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableCountry">
+      <soap12:operation soapAction="http://tempuri.org/DisableCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannel">
+      <soap12:operation soapAction="http://tempuri.org/DisableChannel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannelForNonNubanCustomer">
+      <soap12:operation soapAction="http://tempuri.org/DisableChannelForNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableChannelForEnrolledNonNubanCustomer">
+      <soap12:operation soapAction="http://tempuri.org/DisableChannelForEnrolledNonNubanCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONCardTrxnPerTermCurrMonth">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONCardTrxnPerTermCurrMonth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardOutputInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetCardOutputInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOuputFileTrailer">
+      <soap12:operation soapAction="http://tempuri.org/GenOuputFileTrailer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOuputFileHeader">
+      <soap12:operation soapAction="http://tempuri.org/GenOuputFileHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateOutputFileRecords">
+      <soap12:operation soapAction="http://tempuri.org/GenerateOutputFileRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Cards">
+    <wsdl:port name="CardsSoap" binding="tns:CardsSoap">
+      <soap:address location="http://10.0.41.166/TestCardService/Cards.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CardsSoap12" binding="tns:CardsSoap12">
+      <soap12:address location="http://10.0.41.166/TestCardService/Cards.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
